@@ -3,6 +3,9 @@
 
 * OOP stands for Object-Oriented Programming.
 
+![image](https://user-images.githubusercontent.com/40323661/213327737-2eac1b5f-5f5a-4f8c-9741-3a63dda6d56d.png)
+
+
 * **OOPS is about developing an application around its data, i.e. objects which provides the access to their properties and the possible operations in their own way.**
 
 * Procedural programming is about writing procedures or methods that perform operations on the data, while object-oriented programming is about creating objects that contain both data and methods.
