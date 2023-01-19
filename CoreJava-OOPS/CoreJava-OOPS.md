@@ -20,7 +20,48 @@
 *  **Inheritance**
 *  **Polymorphism**
 
+#### What is a Constructor ?
 
+* Constructor looks like a method but it is in fact not a method. It’s name is same as class name and it does not return any value. You must have seen this statement in almost all the programs I have shared above:
+```java
+MyClass obj = new MyClass();
+```
+* If you look at the right side of this statement, we are calling the default constructor of class myClass to create a new object (or instance).
+
+* We can also have parameters in the constructor, such constructors are known as parametrized constructors.
+
+* Example of constructor
+```java
+public class ConstructorExample {
+
+   int age;
+   String name;
+	
+   //Default constructor
+   ConstructorExample(){
+	this.name="Chaitanya";
+	this.age=30;
+   }
+	
+   //Parameterized constructor
+   ConstructorExample(String n,int a){
+	this.name=n;
+	this.age=a;
+   }
+   public static void main(String args[]){
+	ConstructorExample obj1 = new ConstructorExample();
+	ConstructorExample obj2 = 
+		       new ConstructorExample("Steve", 56);
+	System.out.println(obj1.name+" "+obj1.age);
+	System.out.println(obj2.name+" "+obj2.age);
+   }
+}
+```
+**Output:**
+```java
+Chaitanya 30
+Steve 56
+```
 
 ### Encapsulation
 * Encapsulation allows us to protect the data stored in a class from system-wide access. As its name suggests, it safeguards the internal contents of a class like a real-life capsule. You can implement encapsulation in Java by keeping the fields (class variables) private and providing public getter and setter methods to each of them. Java Beans are examples of fully encapsulated classes.
@@ -158,10 +199,6 @@ running safely
 #### 2) Understanding the real scenario of Abstract class
 
 * In this example, Shape is the abstract class, and its implementation is provided by the Rectangle and Circle classes.
-
-* Mostly, we don't know about the implementation class (which is hidden to the end user), and an object of the implementation class is provided by the **factory method.**
-
-* A **factory method** is a method that returns the instance of the class. We will learn about the factory method later.
 
 * In this example, if you create the instance of Rectangle class, draw() method of Rectangle class will be invoked.
 
