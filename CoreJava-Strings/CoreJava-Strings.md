@@ -89,11 +89,14 @@ example
 * As the name suggests, String Pool in java is a pool of Strings stored in Java Heap Memory. We know that String is special class in java and we can create String object using new operator as well as providing values in double quotes.
 
 * Here is a diagram which clearly explains how String Pool is maintained in java heap space and what happens when we use different ways to create Strings.
+
 ![String-Pool-Java1](https://cdn.journaldev.com/wp-content/uploads/2012/11/String-Pool-Java1.png "String-Pool-Java1")
 
 * String Pool is possible only because String is immutable in Java and its implementation of String interning concept. String pool is also example of Flyweight design pattern.
 
 * However using new operator, we force String class to create a new String object in heap space. We can use intern() method to put it into the pool or refer to another String object from the string pool having the same value.
+
+![image](https://user-images.githubusercontent.com/40323661/213749118-3dc1549e-f640-4c83-9961-adf77922ef38.png)
 
 
 ```Java
