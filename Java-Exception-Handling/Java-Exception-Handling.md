@@ -320,7 +320,6 @@ cleaning.......
 **Final** | **Finally**  | **Finalize**
 ----------|--------------|---------------
 Final is used to apply restrictions on class, method, and variable      |  Finally is used in coding, it will be executed whether an exception is handled or not.      |      Finalize is used to perform clean-up processing before garbage is collected. 
-
 Final is a keyword in java    |   Finally is a block in java      |    Finalize is a method in java 
 Final is executed upon its call.    |   Finally executes after”try-catch” block.     |   finalize executes just before the destruction of the object.
 
