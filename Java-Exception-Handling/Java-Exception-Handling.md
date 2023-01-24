@@ -30,8 +30,21 @@
 
 * All exception and error types are subclasses of class Throwable, which is the base class of the hierarchy. One branch is headed by Exception. This class is used for exceptional conditions that user programs should catch. NullPointerException is an example of such an exception. Another branch, Error is used by the Java run-time system(JVM) to indicate errors having to do with the run-time environment itself(JRE). StackOverflowError is an example of such an error.
 
-![image](https://user-images.githubusercontent.com/40323661/214184894-c25fabab-afdb-484f-894b-525095c30c17.png)
+![image](https://user-images.githubusercontent.com/40323661/214184987-5cb7642e-96b0-483a-85cb-a024562928d4.png)
 
+
+* **Types of Exceptions**
+
+* Java defines several types of exceptions that relate to its various class libraries. Java also allows users to define their own exceptions.
+
+![image](https://user-images.githubusercontent.com/40323661/214185265-5e82d269-51a4-4d6f-bf6a-e5f3acb9f381.png)
+
+* **Exceptions can be categorized in two ways:**
+
+   * Built-in Exceptions
+      * Checked Exception
+      * Unchecked Exception 
+   * User-Defined Exceptions
 
 
 
