@@ -74,13 +74,254 @@
 * **throws**	This keyword is used to declare exceptions.
 
 * **Java Try-Catch Block**
-```java
-Try-catch syntax:
+* Try-catch syntax:
 
+```java
 try{
 }
 catch(Exception e){
 }
 ```
+* **Try-catch Example:**
+```java
+public class ExceptionDemo {
+	public static void main (String[] args) {
+		int a=10;
+		for(int i=3;i>=0;i--)
+		   try{
+		     System.out.println(a/i);  
+		   }catch(ArithmeticException e){
+		       System.out.println(e);
+		   }
+	}
+}
+
+```
+* Output:
+```java
+3
+5
+10
+java.lang.ArithmeticException: / by zero 
+```
+* **try** block contains the code that might throw an exception. Don’t write anything extra in try as statements after the exception will not get executed if the exception occurred. Try must be immediately followed by catch or finally block.
+
+```java
+public class ExceptionDemo {
+	public static void main (String[] args) {
+		int a=10;
+		for(int i=3;i>=0;i--)
+		   try{
+		     System.out.println(a/i);  
+		   }
+	}
+}
+```
+* Compile-time error:
+```java
+prog.java:5: error: 'try' without 'catch', 'finally' or resource declarations
+    try{
+    ^
+1 error 
+```
+* The catch block is used to catch the exception thrown by statements in the try block. The catch must follow try else it will give a compile-time error.
+```java
+public class ExceptionDemo {
+	public static void main (String[] args) {
+		int a=10;
+		for(int i=3;i>=0;i--)
+		   try{
+		     System.out.println(a/i);  
+		   }
+		   System.out.println("between try and catch");
+		   catch(ArithmeticException e){
+		       System.out.println(e);
+		   }
+	}
+}
+```
+* Compile Time Error:
+```java
+prog.java:5: error: 'try' without 'catch', 'finally' or resource declarations
+    try{
+    ^
+prog.java:9: error: 'catch' without 'try'
+    catch(ArithmeticException e){
+    ^
+2 errors
+```
+* **Things to Remember:**
+* Do not keep any code after the statement which is prone to exception. Because if an exception occurred, it will straight away jump to the catch or finally block, ignoring all other statements in the try block.
+
+```java
+class Main {
+	public static void main (String[] args) {
+         try
+       {
+             System.out.println(4/0);
+	 //will not get printed
+             System.out.println("end of try!");
+        }
+catch(ArithmeticException e)
+        {
+            System.out.println("divide by 0");
+        }
+    }
+}
+```
+* Output:
+```java
+divide by 0
+```
+* While catching the exception in the catch block, either you can have directly the class of exception or its superclass.
+
+* Example: Exact Exception
+```java
+class Main {
+	public static void main (String[] args) {
+        try{
+            System.out.println(4/0);
+           }
+      
+        //ArithmeticException 
+        catch(ArithmeticException e){
+            System.out.println("divide by 0");
+        }
+    }
+}
+```
+* Output:
+```java
+divide by 0
+```
+
+* Example: Superclass of Exact Exception
+```java
+class Main {
+	public static void main (String[] args) {
+        try{
+            System.out.println(4/0);
+           }
+      
+        //superclass of ArithmeticException 
+        catch(Exception e){
+            System.out.println("divide by 0");
+        }
+     }
+}
+```
+* Output:
+```java
+divide by 0
+```
+* **Java Multiple Catch Block**
+
+* If you have multiple catches, you have to maintain the hierarchy from subclass to superclass.
+
+* **Incorrect:**
+```java
+class Main {
+	public static void main (String[] args) {
+        try{
+            System.out.println(4/0);
+        }catch(Exception e)
+        {
+            System.out.println("Exception : divide by 0");
+        }catch(ArithmeticException e)
+        {
+            System.out.println("ArithmeticException :divide by 0");
+        }
+	}
+}
+
+Compile-time error:
+
+ prog.java:11: error: exception ArithmeticException has already been caught
+        }catch(ArithmeticException e)
+         ^
+1 error 
+```
+
+* **Correct:**
+```java
+class Main {
+	public static void main (String[] args) {
+        try{
+            System.out.println(4/0);
+        }catch(ArithmeticException e)
+        {
+            System.out.println("ArithmeticException : divide by 0");
+        }catch(Exception e)
+        {
+            System.out.println("Exception : divide by 0");
+        }
+   }
+}
+Output:
+
+ArithmeticException: Divide by 0
+```
+
+* **Java Finally Block**
+
+* Contains code that must be executed no matter if an exception is thrown or not. It contains code of file release, closing connections, etc.
+
+* Example:
+
+```java
+class Main {
+	public static void main (String[] args) {
+        try{
+            System.out.println(4/0);
+        }catch(Exception e)
+        {
+            System.out.println(e);       
+        }
+        finally
+        {
+            System.out.println("finally executed");
+        }
+        
+       	        System.out.println("end");
+	}
+}
+Output:
+
+java.lang.ArithmeticException: / by zero
+finally executed
+end 
+```
+
+* Finally, will execute even when we do not handle exceptions. Before halting the program, JVM checks if there is a “finally” block.
+```java
+class Main {
+	public static void main (String[] args) {
+        try{
+            System.out.println(4/0);
+            
+        }finally
+        {
+            System.out.println("cleaning.......");
+        }
+	}
+}
+
+Runtime Error:
+
+ Exception in thread "main" java.lang.ArithmeticException: / by zero
+ at Main.main(File.java:4) 
+Output:
+
+cleaning.......
+```
+
+* **Java Final vs Finally vs Finalize**
+
+**Final** | **Finally**  | **Finalize**
+----------|--------------|---------------
+Final is used to apply restrictions on class, method, and variable      |  Finally is used in coding, it will be executed whether an exception is handled or not.      |      Finalize is used to perform clean-up processing before garbage is collected. 
+
+Final is a keyword in java    |   Finally is a block in java      |    Finalize is a method in java 
+Final is executed upon its call.    |   Finally executes after”try-catch” block.     |   finalize executes just before the destruction of the object.
 
 
