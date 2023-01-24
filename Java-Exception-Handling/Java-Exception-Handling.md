@@ -46,10 +46,41 @@
       * Unchecked Exception 
    * User-Defined Exceptions
 
+* **Checked Exceptions:** Checked exceptions are called compile-time exceptions because these exceptions are checked at compile-time by the compiler.
+ 
+* **Unchecked Exceptions:**  The unchecked exceptions are just opposite to the checked exceptions. The compiler will not check these exceptions at compile time. In simple words, if a program throws an unchecked exception, and even if we didn’t handle or declare it, the program would not give a compilation error.
+
+* **The advantages of Exception Handling in Java are as follows:**
+
+* Provision to Complete Program Execution
+* Easy Identification of Program Code and Error-Handling Code
+* Propagation of Errors
+* Meaningful Error Reporting
+* Identifying Error Types
+
+* **Java Exception Keywords**
+
+* Exception Handling in java is managed via five keywords: **try, catch, throw, throws, and finally**. Here are 5 keywords that are used in handling exceptions in Java
 
 
+* **try**	This keyword is used to specify a block and this block must be followed by either catch or finally. That is, we can’t use try block alone.
 
+* **catch**	This keyword must be preceded by a try block to handle the exception and can be followed by a final block later.
 
+* **finally** 	This keyword is used to execute the program, whether an exception is handled or not.
 
+* **throw**	This keyword is used to throw an exception.
+
+* **throws**	This keyword is used to declare exceptions.
+
+* **Java Try-Catch Block**
+```java
+Try-catch syntax:
+
+try{
+}
+catch(Exception e){
+}
+```
 
 
