@@ -430,6 +430,74 @@ A checked exception cannot be propagated with throw only.  |  A checked exceptio
 The throw is followed by an instance and used with a method	 |  Throws are followed by class and used with the method signature. 
 You cannot throw multiple exceptions.	 |  You can declare multiple exceptions
 
+#### Java Custom Exception
+* You can create your own exception and give implementation as to how it should behave. Your exception will behave like a child’s class of Exception.
+* Syntax:
+```java
+class YourException extends Exception{}
+```
+
+* **Why use custom exceptions?**
+Java exceptions cover almost all the general types of exceptions that may occur in the programming. However, we sometimes need to create custom exceptions.
+
+* **Following are a few of the reasons to use custom exceptions:**
+
+* To catch and provide specific treatment to a subset of existing Java exceptions.
+* Business logic exceptions: These are the exceptions related to business logic and workflow. It is useful for the application users or the developers to understand the exact problem.
+* In order to create a custom exception, we need to extend the Exception class that belongs to **java.lang package.**
+
+* Example: We pass the string to the constructor of the superclass- Exception which is obtained using the “getMessage()” function on the object created.
+
+```java
+
+// A Class that represents use-defined exception
+ 
+class MyException extends Exception {
+    public MyException(String s)
+    {
+        // Call constructor of parent Exception
+        super(s);
+    }
+}
+ 
+// A Class that uses above MyException
+public class Main {
+    // Driver Program
+    public static void main(String args[])
+    {
+        try {
+            // Throw an object of user defined exception
+            throw new MyException("GeeksGeeks");
+        }
+        catch (MyException ex) {
+            System.out.println("Caught");
+ 
+            // Print the message from MyException object
+            System.out.println(ex.getMessage());
+        }
+    }
+}
+
+```
+* Output
+
+```console
+Caught
+GeeksGeeks
+```
+* In the above code, the constructor of MyException requires a string as its argument. The string is passed to the parent class Exception’s constructor using super(). The constructor of the Exception class can also be called without a parameter and the call to super is not mandatory. 
+
+#### Exception Handling with Method Overriding in Java
+
+* Some of the rules are listed below:
+* **If the superclass method does not declare an exception**
+   * If the superclass method does not declare an exception, subclass overridden method cannot declare the checked exception but it can declare unchecked exception.
+* **If the superclass method declares an exception**
+   * If the superclass method declares an exception, subclass overridden method can declare same, subclass exception or no exception but cannot declare parent exception.
+
+
+
+
 
 
 
