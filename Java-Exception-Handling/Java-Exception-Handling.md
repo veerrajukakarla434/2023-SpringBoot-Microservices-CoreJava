@@ -323,4 +323,36 @@ Final is used to apply restrictions on class, method, and variable      |  Final
 Final is a keyword in java    |   Finally is a block in java      |    Finalize is a method in java 
 Final is executed upon its call.    |   Finally executes after”try-catch” block.     |   finalize executes just before the destruction of the object.
 
+### Java Throw Keyword
+
+* It is a keyword that is used to explicitly throw an exception.
+* We can use throw where according to our logic an exception should occur.
+
+* **Example:** 
+
+```java
+public class ExceptionDemo {
+	static void canVote(int age){
+		if(age<18)
+            try{
+                throw new Exception();
+            }catch(Exception e){
+                System.out.println("you are not an adult!");
+            }
+		else
+		   System.out.println("you can vote!");
+	}
+	public static void main (String[] args) {
+		canVote(20);
+		canVote(10);
+	}
+}
+```
+* Output:
+```console
+you can vote!
+you are not an adult! 
+```
+
+
 
