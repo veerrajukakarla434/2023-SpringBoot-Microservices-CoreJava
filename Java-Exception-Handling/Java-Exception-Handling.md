@@ -420,6 +420,16 @@ can't divide by zero
 5
 Out of bounds! 
 ```
+#### Java Throw vs Throws
+
+
+**Throw** | **Throws**
+----------|--------------
+This keyword is used to explicitly throw an exception.   |  This keyword is used to declare an exception.   
+A checked exception cannot be propagated with throw only.  |  A checked exception can be propagated with throws.
+The throw is followed by an instance and used with a method	 |  Throws are followed by class and used with the method signature. 
+You cannot throw multiple exceptions.	 |  You can declare multiple exceptions
+
 
 
 
