@@ -323,7 +323,7 @@ Final is used to apply restrictions on class, method, and variable      |  Final
 Final is a keyword in java    |   Finally is a block in java      |    Finalize is a method in java 
 Final is executed upon its call.    |   Finally executes after”try-catch” block.     |   finalize executes just before the destruction of the object.
 
-### Java Throw Keyword
+#### Java Throw Keyword
 
 * It is a keyword that is used to explicitly throw an exception.
 * We can use throw where according to our logic an exception should occur.
@@ -352,6 +352,73 @@ public class ExceptionDemo {
 ```console
 you can vote!
 you are not an adult! 
+```
+
+#### Java Throws Keyword
+
+* Throws is a keyword in Java which is used in the signature of method to indicate that this method might throw one of the listed type exceptions. 
+* The caller to these methods has to handle the exception using a try-catch block. 
+
+* **Example:**
+```java
+public class ExceptionDemo {
+	static void func(int a) throws Exception{
+		   System.out.println(10/a);  
+	}
+	public static void main (String[] args) {
+		try{
+		    func(10);
+		    func(0);
+		}catch(Exception e){
+		   System.out.println("can't divide by zero");
+		}
+	
+	}
+}
+```
+* Output:
+```console
+1
+can't divide by zero 
+```
+* If callee can throw multiple exceptions, then all will be thrown simultaneously.
+```java
+import java.util.*;
+
+public class ExceptionDemo {
+	static void func(int a,int b) throws ArithmeticException, ArrayIndexOutOfBoundsException{
+		   System.out.println(10/a); 
+		   int[] arr={1,2,3};
+		   System.out.println(arr[b]);
+	}
+	public static void main (String[] args) {
+		Scanner in=new Scanner(System.in);
+		for(int i=0;i<3;i++){
+		try{
+		    func(in.nextInt(),in.nextInt());
+    		}catch(ArithmeticException e){
+    		   System.out.println("can't divide by zero");
+    		}catch(ArrayIndexOutOfBoundsException e){
+    		   System.out.println("Out of bounds!");
+    		}
+		     }
+		
+	}
+   }
+```
+```console
+Input:
+
+2 1
+0 1
+2 3 
+Output:
+
+5
+2
+can't divide by zero
+5
+Out of bounds! 
 ```
 
 
