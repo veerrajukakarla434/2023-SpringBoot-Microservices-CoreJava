@@ -487,14 +487,215 @@ GeeksGeeks
 ```
 * In the above code, the constructor of MyException requires a string as its argument. The string is passed to the parent class Exception’s constructor using super(). The constructor of the Exception class can also be called without a parameter and the call to super is not mandatory. 
 
+```java
+// A Class that represents use-defined exception
+ 
+class MyException extends Exception {
+}
+ 
+// A Class that uses above MyException
+public class setText {
+    // Driver Program
+    public static void main(String args[])
+    {
+        try {
+            // Throw an object of user defined exception
+            throw new MyException();
+        }
+        catch (MyException ex) {
+            System.out.println("Caught");
+            System.out.println(ex.getMessage());
+        }
+    }
+}
+
+```
+* Output
+```console
+Caught
+null
+```
 #### Exception Handling with Method Overriding in Java
 
+* Exception Handling in Java with Method Overriding is an overridden method that declares to throw an exception and declare that it can throw the same exception or subtype of that exception.
+
+* There are many rules if we talk about method overriding with exception handling.
 * Some of the rules are listed below:
 * **If the superclass method does not declare an exception**
    * If the superclass method does not declare an exception, subclass overridden method cannot declare the checked exception but it can declare unchecked exception.
 * **If the superclass method declares an exception**
    * If the superclass method declares an exception, subclass overridden method can declare same, subclass exception or no exception but cannot declare parent exception.
 
+* To handle the exception in Java, you will have to follow three important rules. They are depicted in the below figure.
+
+![image](https://user-images.githubusercontent.com/40323661/214461711-d58d3dd9-8ff6-4bed-8dc8-fcfafe9bad21.png)
+
+* **Example** -> **If the superclass method does not declare an exception**
+   * Rule 1: If the superclass method does not declare an exception, subclass overridden method cannot declare the checked exception.
+
+```java
+import java.io.*;    
+class Parent{   
+  
+  // defining the method   
+  void msg() {  
+    System.out.println("parent method");  
+    }    
+}    
+    
+public class TestExceptionChild extends Parent{    
+  
+  // overriding the method in child class  
+  // gives compile time error  
+  void msg() throws IOException {    
+    System.out.println("TestExceptionChild");    
+  }  
+  
+  public static void main(String args[]) {    
+   Parent p = new TestExceptionChild();    
+   p.msg();    
+  }    
+} 
+
+```
+![image](https://user-images.githubusercontent.com/40323661/214462176-66c024a3-2e6e-49a9-a080-5129dea5f2e2.png)
+
+* **Example** -> **Rule 2: If the superclass method does not declare an exception, subclass overridden method cannot declare the checked exception but can declare unchecked exception.**
+
+```java
+import java.io.*;    
+class Parent{    
+  void msg() {  
+    System.out.println("parent method");  
+  }    
+}    
+    
+class TestExceptionChild1 extends Parent{    
+  void msg()throws ArithmeticException {    
+    System.out.println("child method");    
+  }    
+  
+  public static void main(String args[]) {    
+   Parent p = new TestExceptionChild1();    
+   p.msg();    
+  }    
+}   
+
+```
+![image](https://user-images.githubusercontent.com/40323661/214462438-37fa8750-0c76-42d3-ad08-10adb25248f8.png)
+
+* **If the superclass method declares an exception**
+   * Rule 1: If the superclass method declares an exception, subclass overridden method can declare the same subclass exception or no exception but cannot declare parent exception.
+
+```java
+import java.io.*;    
+class Parent{    
+  void msg()throws ArithmeticException {  
+    System.out.println("parent method");  
+  }    
+}    
+    
+public class TestExceptionChild2 extends Parent{    
+  void msg()throws Exception {  
+    System.out.println("child method");  
+  }    
+    
+  public static void main(String args[]) {    
+   Parent p = new TestExceptionChild2();    
+     
+   try {    
+   p.msg();    
+   }  
+   catch (Exception e){}   
+  
+  }    
+}     
+
+```
+![image](https://user-images.githubusercontent.com/40323661/214462658-ac66947d-0daf-4c79-b002-ae1587740828.png)
+
+
+* **Example in case subclass overridden method declares same exception**
+
+```java
+import java.io.*;    
+class Parent{    
+  void msg() throws Exception {  
+    System.out.println("parent method");  
+  }    
+}    
+    
+public class TestExceptionChild3 extends Parent {    
+  void msg()throws Exception {  
+    System.out.println("child method");  
+  }    
+    
+  public static void main(String args[]){    
+   Parent p = new TestExceptionChild3();    
+     
+   try {    
+   p.msg();    
+   }  
+   catch(Exception e) {}    
+  }    
+}    
+
+```
+![image](https://user-images.githubusercontent.com/40323661/214462870-6b3810f2-c442-4352-8851-b611d98dda02.png)
+
+* **Example in case subclass overridden method declares subclass exception**
+
+```java
+import java.io.*;    
+class Parent{    
+  void msg()throws Exception {  
+    System.out.println("parent method");  
+  }    
+}    
+    
+class TestExceptionChild4 extends Parent{    
+  void msg()throws ArithmeticException {  
+    System.out.println("child method");  
+  }    
+    
+  public static void main(String args[]){    
+   Parent p = new TestExceptionChild4();    
+     
+   try {    
+   p.msg();    
+   }  
+   catch(Exception e) {}    
+  }    
+}    
+```
+![image](https://user-images.githubusercontent.com/40323661/214462967-7877421f-cf41-4379-8f48-9d82007f5395.png)
+
+* **Example in case subclass overridden method declares no exception**
+```java
+import java.io.*;    
+class Parent {    
+  void msg()throws Exception{  
+    System.out.println("parent method");  
+  }    
+}    
+    
+class TestExceptionChild5 extends Parent{    
+  void msg() {  
+    System.out.println("child method");  
+  }    
+    
+  public static void main(String args[]){    
+   Parent p = new TestExceptionChild5();    
+     
+   try {    
+   p.msg();    
+   }  
+   catch(Exception e) {}  
+       
+  }    
+}  
+```
+![image](https://user-images.githubusercontent.com/40323661/214463072-c3d433cf-2d5c-48f5-a1cd-9b65e44f0a88.png)
 
 
 
