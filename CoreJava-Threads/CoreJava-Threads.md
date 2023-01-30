@@ -21,19 +21,6 @@
 #### It can be created by extending the Thread class and overriding its run() method: 
 
 ```java
-public class Main extends Thread {
-  public static void main(String[] args) {
-    Main thread = new Main();
-    thread.start();
-    System.out.println("This code is outside of the thread");
-  }
-  public void run() {
-    System.out.println("This code is running in a thread");
-  }
-}
-
-Output:
-
 
 public class Main extends Thread {
   public static void main(String[] args) {
@@ -46,16 +33,6 @@ public class Main extends Thread {
   }
 }
 
-public class Main extends Thread {
-  public static void main(String[] args) {
-    Main thread = new Main();
-    thread.start();
-    System.out.println("This code is outside of the thread");
-  }
-  public void run() {
-    System.out.println("This code is running in a thread");
-  }
-}
 
 Output: 
 This code is outside of the thread
@@ -76,19 +53,9 @@ public class Main implements Runnable {
   }
 }
 
-Ouput:
-public class Main implements Runnable {
-  public static void main(String[] args) {
-    Main obj = new Main();
-    Thread thread = new Thread(obj);
-    thread.start();
-    System.out.println("This code is outside of the thread");
-  }
-  public void run() {
-    System.out.println("This code is running in a thread");
-  }
-}
-
+Output: 
+This code is outside of the thread
+This code is running in a thread
 ```
 
 #### Differences between "extending" and "implementing" Threads
