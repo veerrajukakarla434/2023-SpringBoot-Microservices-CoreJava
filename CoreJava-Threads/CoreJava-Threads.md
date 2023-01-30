@@ -62,4 +62,9 @@ This code is running in a thread
 
 * The major difference is that when a class extends the Thread class, you cannot extend any other class, but by implementing the Runnable interface, it is possible to extend from another class as well, like: class **MyClass extends OtherClass implements Runnable**.
 
+#### Life Cycle of a Thread
+
+* A thread goes through various stages in its life cycle. For example, a thread is born, started, runs, and then dies. The following diagram shows the complete life cycle of a thread.
+
+![image](https://user-images.githubusercontent.com/40323661/215364308-83b2ddf6-4d98-4bfb-911a-1c15fe58e87f.png)
 
