@@ -25,10 +25,13 @@
 #### Why use Java collection?
 * There are several benefits of using Java collections such as:
    
-        * Reducing the effort required to write the code by providing useful data structures and algorithms
-        * Java collections provide high-performance and high-quality data structures and algorithms thereby increasing the speed and quality
-        * Unrelated APIs can pass collection interfaces back and forth
-        * Decreases extra effort required to learn, use, and design new API’s
-        * Supports reusability of standard data structures and algorithms
+      * Reducing the effort required to write the code by providing useful data structures and algorithms
+      * Java collections provide high-performance and high-quality data structures and algorithms thereby increasing the speed and quality
+      * Unrelated APIs can pass collection interfaces back and forth
+      * Decreases extra effort required to learn, use, and design new API’s
+      * Supports reusability of standard data structures and algorithms
 
+#### Java Collection Framework Hierarchy
+
+![image](https://user-images.githubusercontent.com/40323661/215625747-b3ab3679-387d-4770-9f89-8d88e415ca8b.png)
 
