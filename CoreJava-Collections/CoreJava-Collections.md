@@ -36,7 +36,7 @@
 ![image](https://user-images.githubusercontent.com/40323661/215625747-b3ab3679-387d-4770-9f89-8d88e415ca8b.png)
 
 
-* Include Map Hierachy
+* Including Map Hierachy
 
 ![image](https://user-images.githubusercontent.com/40323661/215626100-da2d75d8-1309-4c97-b970-a00d9c1ec9c8.png)
 
