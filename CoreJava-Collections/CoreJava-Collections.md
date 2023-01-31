@@ -139,6 +139,7 @@ public class CollectionsDemo {
 * A list may contain multiple null elements.
 * List interface can contain duplicate elements. 
 * List interface implementations classes:
+
           * ArrayList 
           * LinkedList 
           * Vector
