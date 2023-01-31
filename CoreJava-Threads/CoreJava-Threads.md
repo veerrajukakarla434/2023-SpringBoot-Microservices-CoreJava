@@ -1,4 +1,4 @@
-## Java - Multithreading
+## Java - Threads & Multithreading
 
 #### Java Threads
 
