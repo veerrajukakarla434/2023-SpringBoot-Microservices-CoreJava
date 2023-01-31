@@ -269,3 +269,69 @@ ArrayList is better for storing and accessing data. | LinkedList is better for m
 The memory location for the elements of an ArrayList is contiguous. |The location for the elements of a linked list is not contagious. 
 Generally, when an ArrayList is initialized, a default capacity of 10 is assigned to the ArrayList. |There is no case of default capacity in a LinkedList. In LinkedList, an empty list is created when a LinkedList is initialized.
 To be precise, an ArrayList is a resizable array. |LinkedList implements the doubly linked list of the list interface.
+
+
+#### Vector
+
+```java
+import java.util.*;
+public class JavaExample{
+  public static void main(String args[]){
+    Vector<String> v=new Vector<>();
+    v.add("item1"); //["item1"]
+    v.add("item2"); //["item1", "item2"]
+    v.add("item3"); //["item1", "item2", "item3"]
+
+    //removing an element
+    v.remove("item2"); //["item1", "item3"]
+
+    System.out.println("Vector Elements: ");
+    //iterating Vector using iterator
+    Iterator<String> it=v.iterator();
+    while(it.hasNext()){
+      System.out.println(it.next());
+    }
+  }
+}
+
+```
+
+![image](https://user-images.githubusercontent.com/40323661/215909222-cb375079-e383-4f02-a117-7536b1247679.png)
+
+#### Stack
+
+* Stack class extends Vector class, which means it is a subclass of Vector. Stack works on the concept of Last In First Out (LIFO). The elements are inserted using push() method at the end of the stack, the pop() method removes the element which was inserted last in the Stack.
+
+```java
+import java.util.*;
+public class JavaExample{
+  public static void main(String args[]){
+    Stack<String> stack = new Stack<>();
+
+    //push() method adds the element in the stack
+    //and pop() method removes the element from the stack
+    stack.push("Chaitanya"); //["Chaitanya"]
+    stack.push("Ajeet"); //["Chaitanya", Ajeet]
+    stack.push("Hari"); //["Chaitanya", "Ajeet", "Hari"]
+    stack.pop(); //removes the last element
+    stack.push("Steve"); //["Chaitanya", "Ajeet", "Steve"]
+    stack.push("Carl"); //["Chaitanya", "Ajeet", "Steve", "Carl"]
+    stack.pop(); //removes the last element
+
+    System.out.println("Stack elements: ");
+    for(String str: stack){
+      System.out.println(str);
+    }
+  }
+}
+```
+![image](https://user-images.githubusercontent.com/40323661/215909487-09059ad1-99d0-4216-a21e-cd557c75cc97.png)
+
+## Set Interface
+
+* A Set is a Collection that **cannot contain duplicate elements**. 
+* There are three main implementations of Set interface: 
+     * HashSet, 
+     * TreeSet, and 
+     * LinkedHashSet.
+
