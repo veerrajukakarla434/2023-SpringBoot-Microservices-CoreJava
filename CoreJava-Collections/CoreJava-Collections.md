@@ -329,9 +329,103 @@ public class JavaExample{
 
 ## Set Interface
 
+
+
 * A Set is a Collection that **cannot contain duplicate elements**. 
 * There are three main implementations of Set interface: 
      * HashSet, 
      * TreeSet, and 
      * LinkedHashSet.
+
+#### HashSet
+
+* The important points about Java HashSet class are:
+	* HashSet stores the elements by using a mechanism called hashing.
+	* HashSet contains unique elements only.
+	* HashSet allows null value.
+	* HashSet class is non synchronized.
+	* HashSet doesn't maintain the insertion order. Here, elements are inserted on the basis of their hashcode.
+	* HashSet is the best approach for search operations.
+	* The initial default capacity of HashSet is 16, and the load factor is 0.75.
+
+```java
+public static void main(String args[]){  
+  HashSet<String> set=new HashSet<String>();  
+           set.add("Ravi");  
+           set.add("Vijay");  
+           set.add("Arun");  
+           set.add("Sumit");  
+           System.out.println("An initial list of elements: "+set);  
+           //Removing specific element from HashSet  
+           set.remove("Ravi");  
+           System.out.println("After invoking remove(object) method: "+set);  
+           HashSet<String> set1=new HashSet<String>();  
+           set1.add("Ajay");  
+           set1.add("Gaurav");  
+           set.addAll(set1);  
+           System.out.println("Updated List: "+set);  
+           //Removing all the new elements from HashSet  
+           set.removeAll(set1);  
+           System.out.println("After invoking removeAll() method: "+set);  
+           //Removing elements on the basis of specified condition  
+           set.removeIf(str->str.contains("Vijay"));    
+           System.out.println("After invoking removeIf() method: "+set);  
+           //Removing all the elements available in the set  
+           set.clear();  
+           System.out.println("After invoking clear() method: "+set);  
+ }  
+}  
+
+```
+
+#### LinkedHashSet
+
+* Java LinkedHashSet class is a Hashtable and Linked list implementation of the Set interface. It inherits the HashSet class and implements the Set interface.
+
+* The important points about the Java LinkedHashSet class are:
+
+* Java LinkedHashSet class contains unique elements only like HashSet.
+* Java LinkedHashSet class provides all optional set operations and permits null elements.
+* Java LinkedHashSet class is non-synchronized.
+* Java LinkedHashSet class maintains insertion order.
+
+![image](https://user-images.githubusercontent.com/40323661/215910882-21f4dfb2-9b15-4aa6-af72-c1847020b345.png)
+
+* Example
+
+```java
+import java.util.*;
+public class JavaExample{
+  public static void main(String args[]){
+    LinkedHashSet<String> set=new LinkedHashSet<>();
+    set.add("Paul");
+    set.add("Ram");
+    set.add("Aaron");
+    set.add("Leo");
+    set.add("Becky");
+
+    Iterator<String> it=set.iterator();
+    while(it.hasNext()){
+      System.out.println(it.next());
+    }
+  }
+}
+```
+![image](https://user-images.githubusercontent.com/40323661/215911724-07c521a2-6350-4ffa-9680-7c3961228263.png)
+
+#### TreeSet 
+
+* The important points about the Java TreeSet class are:
+	* Java TreeSet class contains unique elements only like HashSet.
+	* Java TreeSet class access and retrieval times are quiet fast.
+	* Java TreeSet class doesn't allow null element.
+	* Java TreeSet class is non synchronized.
+	* Java TreeSet class maintains ascending order.
+	* Java TreeSet class contains unique elements only like HashSet.
+	* Java TreeSet class access and retrieval times are quite fast.
+	* Java TreeSet class doesn't allow null elements.
+	* Java TreeSet class is non-synchronized.
+	* Java TreeSet class maintains ascending order.
+	* The TreeSet can only allow those generic types that are comparable. For example The Comparable interface is being implemented by the StringBuffer class.
+
 
