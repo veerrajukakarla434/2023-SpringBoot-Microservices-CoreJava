@@ -457,15 +457,7 @@ public class JavaExample{
 * **Use LinkedHashSet:** When group of unique elements is needed and insertion order of elements is also required.
 * **Use TreeSet:** When group of unique items/elements/objects is needed and sorting of the elements is required according to some Comparator.
 
-#### Performance difference between HashSet, LinkedHashSet, and TreeSet
-
-```java
-```
-
-
 #### Differences Between HashSet, LinkedHashSet and TreeSet In Java :
-
- usyecase    HashSet	LinkedHashSet	TreeSet
 
 **Considering-Points** | **HashSet** | **LinkedHashSet** | **TreeSet**
 --------------|----------------|----------------|---------------
@@ -477,19 +469,6 @@ How they compare the elements? |HashSet uses equals() and hashCode() methods to 
 Null elements |HashSet allows maximum one null element. | LinkedHashSet also allows maximum one null element. |TreeSet doesn’t allow even a single null element. If you try to insert null element into TreeSet, it throws NullPointerException.
 Memory Occupation |HashSet requires less memory than LinkedHashSet and TreeSet as it uses only HashMap internally to store its elements.| LinkedHashSet requires more memory than HashSet as it also maintains LinkedList along with HashMap to store its elements. |TreeSet also requires more memory than HashSet as it also maintains Comparator to sort the elements along with the TreeMap.
 When To Use? |Use HashSet if you don’t want to maintain any order of elements. |Use LinkedHashSet if you want to maintain insertion order of elements.|Use TreeSet if you want to sort the elements according to some Comparator.
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
