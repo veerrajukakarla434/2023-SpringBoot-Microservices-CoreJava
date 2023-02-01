@@ -457,6 +457,12 @@ public class JavaExample{
 * **Use LinkedHashSet:** When group of unique elements is needed and insertion order of elements is also required.
 * **Use TreeSet:** When group of unique items/elements/objects is needed and sorting of the elements is required according to some Comparator.
 
+#### Performance difference between HashSet, LinkedHashSet, and TreeSet
+
+```java
+```
+
+
 #### Differences Between HashSet, LinkedHashSet and TreeSet In Java :
 
  usyecase    HashSet	LinkedHashSet	TreeSet
