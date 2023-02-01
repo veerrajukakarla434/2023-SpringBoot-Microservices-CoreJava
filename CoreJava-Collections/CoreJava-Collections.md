@@ -428,4 +428,57 @@ public class JavaExample{
 	* Java TreeSet class maintains ascending order.
 	* The TreeSet can only allow those generic types that are comparable. For example The Comparable interface is being implemented by the StringBuffer class.
 
+```java
+import java.util.*;
+public class JavaExample{
+  public static void main(String args[]){
+    TreeSet<String> set=new TreeSet<>();
+    set.add("Paul");
+    set.add("Ram");
+    set.add("Aaron");
+    set.add("Leo");
+    set.add("Becky");
+
+    Iterator<String> it=set.iterator();
+    while(it.hasNext()){
+      System.out.println(it.next());
+    }
+  }
+}
+
+```
+
+![image](https://user-images.githubusercontent.com/40323661/215912784-f49b9eae-1dcf-4b99-944e-63483a35c90a.png)
+
+
+#### When to use HashSet, LinkedHashSet, and TreeSet:
+
+* **Use HashSet:** When there is no need to keep any order in elements but group of unique objects is needed.
+* **Use LinkedHashSet:** When group of unique elements is needed and insertion order of elements is also required.
+* **Use TreeSet:** When group of unique items/elements/objects is needed and sorting of the elements is required according to some Comparator.
+
+#### Differences Between HashSet, LinkedHashSet and TreeSet In Java :
+
+ usyecase    HashSet	LinkedHashSet	TreeSet
+
+**Considering-Points** | **HashSet** | **LinkedHashSet** | **TreeSet**
+--------------|----------------|----------------|---------------
+How they work internally? |HashSet uses HashMap internally to store it’s elements. | LinkedHashSet uses  LinkedHashMap internally to store it’s elements. | TreeSet uses TreeMap internally to store it’s elements.
+Order Of Elements |HashSet doesn’t maintain any order of elements. |LinkedHashSet maintains insertion order of elements. i.e elements are placed as they are inserted.| TreeSet orders the elements according to supplied Comparator. If no comparator is supplied, elements will be placed in their natural ascending order.
+Performance |HashSet gives better performance than the LinkedHashSet and TreeSet.| The performance of LinkedHashSet is between HashSet and TreeSet. It’s performance is almost similar to HashSet. But slightly in the slower side as it also maintains LinkedList internally to maintain the insertion order of elements. | TreeSet gives less performance than the HashSet and LinkedHashSet as it has to sort the elements after each insertion and removal operations.
+How they work internally? |HashSet uses HashMap internally to store it’s elements. | LinkedHashSet uses  LinkedHashMap internally to store it’s elements. | TreeSet uses TreeMap internally to store it’s elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
