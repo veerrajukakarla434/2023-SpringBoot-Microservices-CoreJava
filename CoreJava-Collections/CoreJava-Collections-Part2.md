@@ -25,4 +25,10 @@
 
 #### Working of Queue Data Structure
 
-* In queues, elements are stored and accessed in First In, First Out manner. That is, elements are added from the behind and removed from the front.
+* In queues, elements are stored and accessed in **First In, First Out** manner. That is, elements are **added from the behind** and **removed from the front**.
+* **OR**
+* The Java Queue interface, java.util.Queue represents a data structure designed to have elements **inserted at the end of the queue**, and **elements removed from the beginning of the queue**. This is similar to how a queue in a supermarket works.
+
+![image](https://user-images.githubusercontent.com/40323661/216822962-94ef6318-6dd5-4cf5-8f2e-d459bf027bd9.png)
+
+
