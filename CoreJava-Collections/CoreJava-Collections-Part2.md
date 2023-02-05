@@ -202,4 +202,51 @@ Deque<String> animal2 = new LinkedList<>();
 * **pollFirst()** - Returns and removes the first element of the deque. Returns null if the deque is empty.
 * **pollLast()** - Returns and removes the last element of the deque. Returns null if the deque is empty.
 
+#### Example :- Implementation of Deque in ArrayDeque Class
+
+```java
+import java.util.Deque;
+import java.util.ArrayDeque;
+
+class Main {
+
+    public static void main(String[] args) {
+        // Creating Deque using the ArrayDeque class
+        Deque<Integer> numbers = new ArrayDeque<>();
+
+        // add elements to the Deque
+        numbers.offer(1);
+        numbers.offerLast(2);
+        numbers.offerFirst(3);
+        System.out.println("Deque: " + numbers);
+
+        // Access elements of the Deque
+        int firstElement = numbers.peekFirst();
+        System.out.println("First Element: " + firstElement);
+
+        int lastElement = numbers.peekLast();
+        System.out.println("Last Element: " + lastElement);
+
+        // Remove elements from the Deque
+        int removedNumber1 = numbers.pollFirst();
+        System.out.println("Removed First Element: " + removedNumber1);
+
+        int removedNumber2 = numbers.pollLast();
+        System.out.println("Removed Last Element: " + removedNumber2);
+
+        System.out.println("Updated Deque: " + numbers);
+    }
+}
+
+```
+* OUTPUT:
+
+```java
+Deque: [3, 1, 2]
+First Element: 3
+Last Element: 2
+Removed First Element: 3
+Removed Last Element: 2
+Updated Deque: [1]
+```
 
