@@ -13,6 +13,19 @@
 
 ![image](https://user-images.githubusercontent.com/40323661/216822318-1a2eab6f-7d5c-4c74-9cbf-a2044024a589.png)
 
+```java
+// LinkedList implementation of Queue
+Queue<String> animal1 = new LinkedList<>();
+
+// Array implementation of Queue
+Queue<String> animal2 = new ArrayDeque<>();
+
+// Priority Queue implementation of Queue
+Queue<String> animal 3 = new PriorityQueue<>();
+
+```
+
+
 #### Interfaces that extend Queue
 
 * The **Queue** interface is also extended by various subinterfaces:
