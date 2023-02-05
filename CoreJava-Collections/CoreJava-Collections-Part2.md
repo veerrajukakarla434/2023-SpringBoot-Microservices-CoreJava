@@ -44,4 +44,9 @@ Queue<String> animal 3 = new PriorityQueue<>();
 
 ![image](https://user-images.githubusercontent.com/40323661/216822962-94ef6318-6dd5-4cf5-8f2e-d459bf027bd9.png)
 
+#### Classes that implement Deque
+
+* In order to use the functionalities of the Deque interface, we need to use classes that implement it:
+   * ArrayDeque
+   * LinkedList
 
