@@ -1,4 +1,10 @@
+
 ## Java Queue Interface
+
+#### Java Collection Framework Hierarchy
+
+![image](https://user-images.githubusercontent.com/40323661/215625747-b3ab3679-387d-4770-9f89-8d88e415ca8b.png)
+
 
 * The **Queue interface** of the Java collections framework provides the functionality of the queue data structure. It extends the **Collection** interface.
 
