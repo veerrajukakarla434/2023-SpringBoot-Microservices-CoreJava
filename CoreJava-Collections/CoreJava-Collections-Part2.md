@@ -53,6 +53,44 @@ Queue<String> animal 3 = new PriorityQueue<>();
 #### Classes that implement Deque
 
 * In order to use the functionalities of the Deque interface, we need to use classes that implement it:
-   * ArrayDeque
-   * LinkedList
+   * **ArrayDeque**
+   * **LinkedList**
+![image](https://user-images.githubusercontent.com/40323661/216823891-a7135710-6f8b-4a16-bdaf-fbd5e165b566.png)
+
+```java
+// Array implementation of Deque
+Deque<String> animal1 = new ArrayDeque<>();
+
+// LinkedList implementation of Deque
+Deque<String> animal2 = new LinkedList<>();
+```
+
+#### Methods of Deque
+
+* Since **Deque extends the Queue interface**, it inherits all the methods of the Queue interface.
+* Besides methods available in the Queue interface, the **Deque interface also includes the following methods**:
+
+* **Add Element to Deque**
+    * add()
+    * addLast()
+    * addFirst()
+    * offer()
+    * offerLast()
+    * offerFirst()
+    * push()
+* **Peek at Element in Deque**
+    * peek()
+    * peekFirst()
+    * peekLast()
+    * getFirst()
+    * getLast()
+* **Remove Element From Deque**
+    * remove()
+    * removeFirst()
+    * removeLast()
+    * poll()
+    * pollFirst()
+    * pollLast()
+    * pop()
+
 
