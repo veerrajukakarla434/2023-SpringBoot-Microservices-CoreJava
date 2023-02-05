@@ -38,4 +38,10 @@
 * **remove:** Removes the requested key and its value from the map, if the key exists.
 * **size:** Returns the number of key-value pairs currently in the map.
 
+* **HashMap** is the implementation of Map, but it doesn't maintain any order.
+* **LinkedHashMap**	 is the implementation of Map. It inherits HashMap class. It maintains insertion order.
+* **TreeMap**  is the implementation of Map and SortedMap. It maintains ascending order.
+
+![image](https://user-images.githubusercontent.com/40323661/216832666-293b560e-7e38-4bae-ad6a-6ce0c5c141e4.png)
+
 
