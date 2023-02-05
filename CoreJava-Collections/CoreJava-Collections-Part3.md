@@ -44,4 +44,139 @@
 
 ![image](https://user-images.githubusercontent.com/40323661/216832666-293b560e-7e38-4bae-ad6a-6ce0c5c141e4.png)
 
+#### HashMapExample.java:
+
+```java
+public class HashMapExample {
+ 
+    public static void main(String[] args) {
+        Map<String, Integer> vehicles = new HashMap<>();
+ 
+        // Add some vehicles.
+        vehicles.put("BMW", 5);
+        vehicles.put("Mercedes", 3);
+        vehicles.put("Audi", 4);
+        vehicles.put("Ford", 10);
+ 
+        System.out.println("Total vehicles: " + vehicles.size());
+ 
+        // Iterate over all vehicles, using the keySet method.
+        for (String key : vehicles.keySet())
+            System.out.println(key + " - " + vehicles.get(key));
+        System.out.println();
+ 
+        String searchKey = "Audi";
+        if (vehicles.containsKey(searchKey))
+            System.out.println("Found total " + vehicles.get(searchKey) + " " + searchKey + " cars!\n");
+ 
+        // Clear all values.
+        vehicles.clear();
+ 
+        // Equals to zero.
+        System.out.println("After clear operation, size: " + vehicles.size());
+    }
+}
+
+```
+
+* OUTPUT:
+
+```java
+Total vehicles: 4
+Audi - 4
+Ford - 10
+BMW - 5
+Mercedes - 3
+Found total 4 Audi cars!
+After clear operation, size: 0
+```
+
+```java
+import java.util.*;  
+class MapExample2{  
+ public static void main(String args[]){  
+  Map<Integer,String> map=new HashMap<Integer,String>();  
+  map.put(100,"Amit");  
+  map.put(101,"Vijay");  
+  map.put(102,"Rahul");  
+  //Elements can traverse in any order  
+  for(Map.Entry m:map.entrySet()){  
+   System.out.println(m.getKey()+" "+m.getValue());  
+  }  
+ }  
+}  
+
+```
+* OUTPUT:
+
+```java
+102 Rahul
+100 Amit
+101 Vijay
+```
+
+```java
+import java.util.LinkedHashMap;
+
+class Main {
+    public static void main(String[] args) {
+        // Creating a LinkedHashMap of even numbers
+        LinkedHashMap<String, Integer> evenNumbers = new LinkedHashMap<>();
+        evenNumbers.put("Two", 2);
+        evenNumbers.put("Four", 4);
+        System.out.println("LinkedHashMap1: " + evenNumbers);
+
+        // Creating a LinkedHashMap from other LinkedHashMap
+        LinkedHashMap<String, Integer> numbers = new LinkedHashMap<>(evenNumbers);
+        numbers.put("Three", 3);
+        System.out.println("LinkedHashMap2: " + numbers);
+    }
+}
+
+```
+* OUTPUT:
+
+```java
+LinkedHashMap1: {Two=2, Four=4}
+LinkedHashMap2: {Two=2, Four=4, Three=3}
+```
+
+#### Access LinkedHashMap Elements
+* 1. Using entrySet(), keySet() and values()
+
+* **entrySet()** - returns a set of all the key/value mapping of the map
+* **keySet()** - returns a set of all the keys of the map
+* **values()** - returns a set of all the values of the map
+
+```java
+import java.util.LinkedHashMap;
+
+class Main {
+    public static void main(String[] args) {
+        LinkedHashMap<String, Integer> numbers = new LinkedHashMap<>();
+
+        numbers.put("One", 1);
+        numbers.put("Two", 2);
+        numbers.put("Three", 3);
+        System.out.println("LinkedHashMap: " + numbers);
+
+        // Using entrySet()
+        System.out.println("Key/Value mappings: " + numbers.entrySet());
+
+        // Using keySet()
+        System.out.println("Keys: " + numbers.keySet());
+
+        // Using values()
+        System.out.println("Values: " + numbers.values());
+    }
+}
+
+```
+* OUTPUT:
+```java
+LinkedHashMap: {One=1, Two=2, Three=3}
+Key/Value mappings: [One=1, Two=2, Three=3]
+Keys: [One, Two, Three]
+Values: [1, 2, 3]
+```
 
