@@ -216,4 +216,21 @@ TreeMap of even numbers: {Four=4, Six=6, Two=2}
 TreeMap of numbers: {Four=4, One=1, Six=6, Two=2}
 ```
 
+#### Difference between TreeMap, HashMap, and LinkedHashMap in Java
+
+* **HashMap**
+   * HashMap has complexity of O(1) for insertion and lookup.
+   * HashMap allows one null key and multiple null values.
+   * HashMap does not maintain any order.
+
+* **LinkedHashMap**
+  * LinkedHashMap has complexity of O(1) for insertion and lookup.
+  * LinkedHashMap allows one null key and multiple null values.
+  * LinkedHashMap maintains order in which key-value pairs are inserted.
+
+* **TreeMap**
+  * TreeMap has complexity of O(logN) for insertion and lookup.
+  * TreeMap does not allow null key but allow multiple null values.
+  * TreeMap maintains order. It stores keys in sorted and ascending order.
+
 
