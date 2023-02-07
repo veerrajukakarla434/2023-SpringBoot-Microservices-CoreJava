@@ -233,4 +233,63 @@ TreeMap of numbers: {Four=4, One=1, Six=6, Two=2}
   * TreeMap does not allow null key but allow multiple null values.
   * TreeMap maintains order. It stores keys in sorted and ascending order.
 
+#### ConcurrentModificationException in Java
+
+* **For Example** - It is not permissible for a thread to modify a Collection when some other thread is iterating over it. This is because the result of the iteration becomes undefined with it. Some implementation of the Iterator class throws this exception, including all those general-purpose implementations of Iterator which are provided by the JRE. Iterators which do this are called fail-fast as they throw the exception quickly as soon as they encounter such situation rather than facing undetermined behavior of the collection any time in the future.
+
+
+```java
+import java.awt.List;  
+import java.util.*;  
+  
+public class Concurrentmodificationexception {  
+  
+    public static void main(String[] args) {  
+        ArrayList<Integer> list = new ArrayList<>();  
+  
+        list.add(1);  
+        list.add(2);  
+        list.add(3);  
+        list.add(4);  
+        list.add(5);  
+  
+        Iterator<Integer> it = list.iterator();  
+        while (it.hasNext()) {                   
+Integer value = it.next();              
+            System.out.println("List Value:" + value);  
+            if (value.equals(3))  
+                list.remove(value);  
+        }  
+  
+    }  
+  
+}  
+
+```
+
+
+```java
+import java.awt.List;  
+import java.util.*;  
+  
+public class concurrentmodificationexception {  
+  
+    public static void main(String[] args) {  
+          
+        HashMap<Integer, Integer> map = new HashMap<>();  
+        map.put(1, 1);  
+        map.put(2, 2);  
+        map.put(3,3);  
+          
+        Iterator<Integer> it = map.keySet().iterator();  
+        while(it.hasNext()) {  
+            Integer key = it.next();  
+            System.out.println("Map Value:" + map.get(key));  
+            if (key.equals(2)) {  
+                map.put(1, 4);  
+            }  
+        }     
+    }  
+}  
+```
 
