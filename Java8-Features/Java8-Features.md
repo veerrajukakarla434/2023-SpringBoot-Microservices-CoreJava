@@ -1,5 +1,7 @@
 ## Java8-Features
 
+![image](https://user-images.githubusercontent.com/40323661/217402004-f14d35e9-80b8-4ebf-8c08-6b344a065850.png)
+
 * Here are the newly added features of Java 8:
 
 **Feature Name** | **Description**
